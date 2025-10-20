@@ -14,6 +14,19 @@ NC='\033[0m' # No Color
 
 echo -e "${GREEN}🌤️ Iniciando aplicación de clima MCP...${NC}"
 
+# Preguntar al usuario si usa Windows
+echo -e "${YELLOW}💻 ¿Estás usando Windows? (s/n):${NC}"
+read -r is_windows
+
+# Determinar el path de activación según el sistema operativo
+if [[ "$is_windows" =~ ^[sS]$ ]]; then
+    ACTIVATE_PATH="venv/Scripts/activate"
+    echo -e "${GREEN}✅ Configurado para Windows${NC}"
+else
+    ACTIVATE_PATH="venv/bin/activate"
+    echo -e "${GREEN}✅ Configurado para macOS/Linux${NC}"
+fi
+
 # Verificar si existe el entorno virtual
 if [ ! -d "venv" ]; then
     echo -e "${YELLOW}📦 Creando entorno virtual...${NC}"
@@ -27,7 +40,7 @@ fi
 
 # Activar entorno virtual
 echo -e "${YELLOW}🔧 Activando entorno virtual...${NC}"
-source venv/bin/activate
+source "$ACTIVATE_PATH"
 
 # Verificar si requests está instalado
 if ! python3 -c "import requests" 2>/dev/null; then
