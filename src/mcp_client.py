@@ -61,7 +61,7 @@ class MCPClient:
         
         # Enviar solicitud
         request_json = json.dumps(request) + "\n"
-        self.process.stdin.write(request_json.encode('utf-8'))
+        self.process.stdin.write(request_json)
         self.process.stdin.flush()
         
         # Leer respuesta
@@ -69,7 +69,7 @@ class MCPClient:
         if not response_line:
             raise RuntimeError("No se recibió respuesta del servidor")
         
-        response = json.loads(response_line.decode('utf-8'))
+        response = json.loads(response_line)
         
         # Verificar si hay error en la respuesta
         if "error" in response:
