@@ -4,23 +4,8 @@
 
 ## 🚀 Inicio Rápido
 
-### Ejecución rápida
 ```bash
-# Ejecutar la aplicación
 ./run_app.sh
-```
-
-### Ejecución Manual
-```bash
-# Crear entorno virtual (solo la primera vez)
-python3 -m venv venv
-source venv/bin/activate
-
-# Instalar dependencias
-pip install requests
-
-# Ejecutar la aplicación
-python3 src/weather_app.py
 ```
 
 ## 🏗️ Arquitectura
@@ -37,13 +22,13 @@ python3 src/weather_app.py
 ```
 mcp-weather-app/
 ├── src/
-│   ├── weather_app.py      # Interfaz gráfica principal
-│   ├── mcp_client.py       # Cliente MCP
+│   ├── weather_app.py       # Interfaz gráfica principal
+│   ├── mcp_client.py        # Cliente MCP
 │   ├── mcp_server.py        # Servidor MCP
 │   └── weather_service.py   # Servicio meteorológico
-├── run_app.sh              # Script de inicio automático
-├── venv/                   # Entorno virtual (creado automáticamente)
-└── README.md               # Este archivo
+├── run_app.sh               # Script de inicio automático
+├── venv/                    # Entorno virtual (creado automáticamente)
+└── README.md                # Documentación
 ```
 
 ## 🎯 Características
@@ -80,20 +65,3 @@ La aplicación proporciona:
 3. **Ingresar** el nombre de una ciudad
 4. **Hacer clic** en "🌤️ Obtener Clima"
 5. **Ver** la información meteorológica en tiempo real
-
-## 🔄 Comandos Útiles
-
-```bash
-# Ejecutar aplicación (recomendado)
-./run_app.sh
-
-# Limpiar y reinstalar desde cero
-rm -rf venv
-./run_app.sh
-
-# Probar componentes individuales (después de ./run_app.sh)
-source venv/bin/activate
-python3 src/weather_service.py    # Probar servicio meteorológico
-python3 src/mcp_client.py         # Probar cliente MCP
-python3 src/mcp_server.py         # Probar servidor MCP
-```
