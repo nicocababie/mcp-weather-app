@@ -1,0 +1,14 @@
+# Dependencias para el proyecto MCP Weather Server/Client
+# Proyecto: Servidor y Cliente MCP para información meteorológica en tiempo real
+
+# Biblioteca para realizar solicitudes HTTP a wttr.in
+requests>=2.31.0
+
+# Nota: Las siguientes librerías están incluidas en Python estándar:
+# - tkinter (GUI)
+# - json (manejo de JSON)
+# - subprocess (comunicación entre procesos)
+# - threading (hilos)
+# - logging (registro de eventos)
+# - pathlib (manejo de rutas)
+# - sys, os (sistema operativo)
