@@ -1,0 +1,32 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "🌤️ Ejecutar Weather App",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/weather_app.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "justMyCode": true
+    },
+    {
+      "name": "🧪 Probar Weather Service",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/weather_service.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "justMyCode": true
+    },
+    {
+      "name": "🔗 Probar MCP Client",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/mcp_client.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "justMyCode": true
+    }
+  ]
+}
