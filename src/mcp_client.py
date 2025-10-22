@@ -292,25 +292,25 @@ if __name__ == "__main__":
     
     client = WeatherMCPClient()
     if client.connect():
-        print("✅ Conectado al servidor MCP")
+        print(" Conectado al servidor MCP")
         
         # Probar herramientas disponibles
         tools = client.client.get_available_tools()
-        print(f"🔧 Herramientas disponibles: {len(tools)}")
+        print(f" Herramientas disponibles: {len(tools)}")
         for tool in tools:
             print(f"  - {tool['name']}: {tool['description']}")
         
         # Probar consulta meteorológica
-        print("\n🌤️ Probando consulta meteorológica...")
+        print("\n Probando consulta meteorológica...")
         weather = client.get_weather("Madrid")
         
         if "error" in weather:
-            print(f"❌ Error: {weather['error']}")
+            print(f" Error: {weather['error']}")
         else:
-            print("✅ Datos meteorológicos obtenidos:")
+            print(" Datos meteorológicos obtenidos:")
             for key, value in weather.items():
                 print(f"  {key}: {value}")
         
         client.disconnect()
     else:
-        print("❌ No se pudo conectar al servidor MCP")
+        print(" No se pudo conectar al servidor MCP")

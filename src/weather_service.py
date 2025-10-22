@@ -121,12 +121,12 @@ class WeatherService:
             return f"Error: {weather_data['message']}"
         
         return (
-            f"🌤️  Clima en {weather_data['city']}\n"
-            f"🌡️  Temperatura: {weather_data['temperature']}°C\n"
-            f"☁️  Condiciones: {weather_data['condition']}\n"
-            f"💧 Humedad: {weather_data['humidity']}%\n"
-            f"💨 Viento: {weather_data['wind_speed']} km/h {weather_data['wind_direction']}\n"
-            f"🌡️  Sensación térmica: {weather_data['feels_like']}°C"
+            f"  Clima en {weather_data['city']}\n"
+            f"  Temperatura: {weather_data['temperature']}°C\n"
+            f"  Condiciones: {weather_data['condition']}\n"
+            f"  Humedad: {weather_data['humidity']}%\n"
+            f"  Viento: {weather_data['wind_speed']} km/h {weather_data['wind_direction']}\n"
+            f"  Sensación térmica: {weather_data['feels_like']}°C"
         )
 
 

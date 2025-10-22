@@ -23,7 +23,7 @@ class WeatherApp:
     
     def setup_ui(self):
         """Configura la interfaz de usuario"""
-        self.root.title("🌤️ Clima en Tiempo Real - MCP Client")
+        self.root.title(" Clima en Tiempo Real - MCP Client")
         self.root.geometry("600x500")
         self.root.resizable(True, True)
         
@@ -43,7 +43,7 @@ class WeatherApp:
         # Título
         title_label = ttk.Label(
             main_frame, 
-            text="🌤️ Consulta de Clima en Tiempo Real",
+            text=" Consulta de Clima en Tiempo Real",
             font=('Arial', 16, 'bold')
         )
         title_label.grid(row=0, column=0, columnspan=3, pady=(0, 20))
@@ -51,7 +51,7 @@ class WeatherApp:
         # Estado de conexión
         self.status_label = ttk.Label(
             main_frame,
-            text="🔄 Conectando al servidor MCP...",
+            text=" Conectando al servidor MCP...",
             font=('Arial', 10)
         )
         self.status_label.grid(row=1, column=0, columnspan=3, pady=(0, 10))
@@ -70,7 +70,7 @@ class WeatherApp:
         # Botón de consulta
         self.query_button = ttk.Button(
             input_frame,
-            text="🌤️ Obtener Clima",
+            text=" Obtener Clima",
             command=self.get_weather,
             state='disabled'
         )
@@ -100,14 +100,14 @@ class WeatherApp:
         # Botón de limpiar
         ttk.Button(
             button_frame,
-            text="🗑️ Limpiar",
+            text="Limpiar",
             command=self.clear_results
         ).pack(side=tk.LEFT, padx=(0, 10))
         
         # Botón de reconectar
         self.reconnect_button = ttk.Button(
             button_frame,
-            text="🔄 Reconectar",
+            text="Reconectar",
             command=self.reconnect_server
         )
         self.reconnect_button.pack(side=tk.LEFT)
@@ -137,13 +137,13 @@ class WeatherApp:
     
     def on_connection_success(self):
         """Maneja la conexión exitosa"""
-        self.status_label.config(text="✅ Conectado al servidor MCP")
+        self.status_label.config(text=" Conectado al servidor MCP")
         self.query_button.config(state='normal')
         self.reconnect_button.config(state='disabled')
     
     def on_connection_failure(self, error_msg: str = None):
         """Maneja el fallo de conexión"""
-        error_text = f"❌ Error de conexión: {error_msg}" if error_msg else "❌ No se pudo conectar al servidor MCP"
+        error_text = f" Error de conexión: {error_msg}" if error_msg else " No se pudo conectar al servidor MCP"
         self.status_label.config(text=error_text)
         self.query_button.config(state='disabled')
         self.reconnect_button.config(state='normal')
@@ -189,21 +189,21 @@ class WeatherApp:
         
         # Formatear información meteorológica
         weather_text = f"""
-🌤️ INFORMACIÓN METEOROLÓGICA - {weather_data.get('city', city).upper()}
+ INFORMACIÓN METEOROLÓGICA - {weather_data.get('city', city).upper()}
 {'=' * 60}
 
-🌡️  Temperatura: {weather_data.get('temperature', 'N/A')}°C
-🌡️  Sensación térmica: {weather_data.get('feels_like', 'N/A')}°C
-☁️  Condiciones: {weather_data.get('condition', 'N/A')}
-💧 Humedad: {weather_data.get('humidity', 'N/A')}%
-💨 Viento: {weather_data.get('wind_speed', 'N/A')} km/h {weather_data.get('wind_direction', '')}
-🌬️  Presión: {weather_data.get('pressure', 'N/A')} mb
-👁️  Visibilidad: {weather_data.get('visibility', 'N/A')} km
-☀️  Índice UV: {weather_data.get('uv_index', 'N/A')}
-🕐 Última actualización: {weather_data.get('timestamp', 'N/A')}
+Temperatura: {weather_data.get('temperature', 'N/A')}°C
+Sensación térmica: {weather_data.get('feels_like', 'N/A')}°C
+Condiciones: {weather_data.get('condition', 'N/A')}
+Humedad: {weather_data.get('humidity', 'N/A')}%
+Viento: {weather_data.get('wind_speed', 'N/A')} km/h {weather_data.get('wind_direction', '')}
+Presión: {weather_data.get('pressure', 'N/A')} mb
+Visibilidad: {weather_data.get('visibility', 'N/A')} km
+Índice UV: {weather_data.get('uv_index', 'N/A')}
+Última actualización: {weather_data.get('timestamp', 'N/A')}
 
 {'=' * 60}
-📊 Datos obtenidos desde wttr.in via MCP Server
+Datos obtenidos desde wttr.in via MCP Server
         """.strip()
         
         # Mostrar en el área de texto
@@ -222,14 +222,14 @@ class WeatherApp:
         self.query_button.config(state='normal')
         
         error_text = f"""
-❌ ERROR AL OBTENER INFORMACIÓN METEOROLÓGICA
+ ERROR AL OBTENER INFORMACIÓN METEOROLÓGICA
 {'=' * 50}
 
 Ciudad consultada: {city}
 Error: {error_msg}
 
 {'=' * 50}
-💡 Sugerencias:
+Sugerencias:
 • Verifique que el nombre de la ciudad sea correcto
 • Asegúrese de que hay conexión a internet
 • Intente con el nombre en inglés (ej: Madrid, London, New York)
@@ -275,13 +275,13 @@ Error: {error_msg}
 
 def main():
     """Función principal"""
-    print("🌤️ Iniciando aplicación de clima MCP...")
+    print(" Iniciando aplicación de clima MCP...")
     
     try:
         app = WeatherApp()
         app.run()
     except Exception as e:
-        print(f"❌ Error iniciando aplicación: {e}")
+        print(f" Error iniciando aplicación: {e}")
         messagebox.showerror("Error", f"Error iniciando aplicación: {e}")
 
 
